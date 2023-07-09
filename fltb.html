@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Ticket Booking</title>
+  <style>
+    /* CSS styles for the forms */
+    form {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- User Login Form -->
+  <h2>User Login</h2>
+  <form id="loginForm">
+    <input type="text" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <input type="submit" value="Login">
+  </form>
+
+  <!-- User Signup Form -->
+  <h2>User Signup</h2>
+  <form id="signupForm">
+    <input type="text" id="signupName" placeholder="Name" required>
+    <input type="text" id="signupEmail" placeholder="Email" required>
+    <input type="password" id="signupPassword" placeholder="Password" required>
+    <input type="submit" value="Sign Up">
+  </form>
+
+  <!-- Admin Flight Management -->
+  <h2>Admin Flight Management</h2>
+  <form id="addFlightForm">
+    <input type="text" id="flightNumber" placeholder="Flight Number" required>
+    <input type="datetime-local" id="departure" required>
+    <input type="submit" value="Add Flight">
+  </form>
+
+  <form id="removeFlightForm">
+    <input type="text" id="flightId" placeholder="Flight ID" required>
+    <input type="submit" value="Remove Flight">
+  </form>
+
+  <!-- JavaScript code -->
+  <script>
+    // User Login Form submission
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      // Make API request to user login endpoint with email and password
+      // Handle response and redirect user if successful
+    });
+
+    // User Signup Form submission
+    const signupForm = document.getElementById('signupForm');
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+      // Make API request to user signup endpoint with name, email, and password
+      // Handle response and redirect user if successful
+    });
+
+    // Admin Add Flight Form submission
+    const addFlightForm = document.getElementById('addFlightForm');
+    addFlightForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const flightNumber = document.getElementById('flightNumber').value;
+      const departure = document.getElementById('departure').value;
+      // Make API request to add flight endpoint with flight number and departure
+    })
+    // Admin Remove Flight Form submission
+    document.getElementById('removeFlightForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var flightId = document.getElementById('flightId').value;
+      // Make API request to remove flight endpoint with flight ID
+      // Handle response and display success or error message
+    });
